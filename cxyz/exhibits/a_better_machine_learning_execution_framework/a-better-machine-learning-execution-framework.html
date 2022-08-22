@@ -1,0 +1,213 @@
+{% extends "base-container.html" %}
+
+{% block title %}a-better-machine-learning-execution-framework{% endblock %}
+{% block head %}
+{{ super() }}
+<link href="{{ url_for('a_better_machine_learning_execution_framework.static', filename='style.css') }}"
+      rel="stylesheet">
+{% endblock %}
+
+{% block container %}
+{% filter markdown %}
+
+# a better machine learning execution framework
+
+https://thehub.thomsonreuters.com/people/6020643/blog/2020/12/03/an-aiml-execution-playbook-to-call-our-own
+
+Mike Wojciechowski recently contributed a great amount of detail for how to manage the execution of projects.
+
+There's a lot of good stuff there. The "guts" of the process – the sprint regiments etc. above – all look reasonable. I also think he hit the nail on the head with the mitigating risk theme and I appreciate the distinction between risk and uncertainty.
+
+What I would like to see is all this within a larger framework of our project management pipeline, our practices, and C3's overarching strategy – mitigating risk and continually improving not just within projects but across them, not just within C3 but across TR.
+
+I will piggy-back on Merine Thomas' points made in the comments as well. Labeling and annotation is a pillar of what we do: it's a huge value add, something we are exceptional at, and should absolutely be added to the process. I also feel the machine-learning development life cycle diagram is too simple.
+
+All together, I'd like to see a more closed loop model; a 'living' process with more explicit procedures for how (and when) we update the project management process itself; how we more effectively surface, capture and aggregate high-value assets across the group; and how this all fits together to advance the long-term strategic goals of TR/C3+Labs.
+
+Here's a proposal for doing that. Bear with me and I'll break it down alongside the points above.
+
+Mike Wojciechowski's original post is here Managing Projects within C3: Mitigating Risk and Uncertainty (Part I)
+
+Improving the development life cycle model: data, data, data
+
+First up is to address in further detail the points Merine Thomas made here.  We need a model that reflects the nature of our practice more accurately.
+
+No doubt about it: data annotation needs to be added. Producing labels is a critical and expensive part of almost every project. It affects everything we do downstream, a dominant upstream source of risk and uncertainty, and an area where we excel as a group. We have lots of experience with data annotation: deploying tooling, administering tasks, developing annotation guidelines, etc., etc. Together with SMEs across TR: we are the best in the world at creating these datasets!
+
+Data, data, data. It's just so fundamental to your project. It will probably be your biggest issue. [...]
+
+We needed a lot of domain experts to go through and annotate the data. And it takes a long time. Those Practical Law experts are really expensive. We really underestimated how much money we needed to spend and how much time it would take to really get the information to training models.
+
+– Kathryn Davies, Associate Architect for Legal Technology on Project Camden, source
+
+Annotation is also not simply a one-and-done upstream task either: it's a critical part of almost every meaningful development iteration.  We often annotate continuously, making many "passes" over training and testing data, in order to validate and quantify performance with increasingly greater precision.
+
+Data acquisition should also be added. This is separate (upstream) from data annotation and comes with its own risks and uncertainty. Does the data even exist? Do we know who to contact? Is it in Novus SNI? Perhaps Tom Zielund has a "magic spell" for us to cast into the depths of Novus? What are the governance restrictions associated with being able to handle these data?...
+
+The reality is that data acquisition often comes down to 'tribal knowledge' and often a whole lot of lost time: a huge source of uncertainty that we have little influence to mitigate (unlike data annotation which we have great influence over and have developed meaningful expertise in). More from AI Dev & Architecture Lessons Learned (emphasis mine):
+
+We were lucky we had a bunch of US data. It took us 10 months before we got any UK data. I mean honestly, that long because there was lots of legal rows about privacy issues and whether we could use it or not, and it just rumbled on [...]. We didn't have anything for the UK market despite 9 months of trying to get it.
+
+– Kathryn Davies, Associate Architect for Legal Technology on Project Camden, source
+
+I would emphasize [the data governance and legal issues] more. We had a team that was doing some work with Labs, and they spent four months trying to get clearance to use this one data set in just some proof of concept work – and it was a public dataset. It was published!
+
+By the time we got through legal and what not, they ended up not doing it because they were four months in and couldn't get a "go". They said okay, we're going to move on and solve some other problem today. [...] We grossly underestimated that as well. We've had other projects where we wanted to use some customer data and knew that was going to be hard. But everything is hard.
+
+– Mark Gendein, Principal Architect, Legal Technology, source
+
+One last point here about data – and this gets to the closed loop, continuous nature of our practice – data is continuously acquired analyzed, and transformed.
+
+We need to consider at the same time that, the way things work now, we're required to hand off work to other teams so C3 can move on to other projects.  This involves planning operations and maintenance beyond the bounds of C3. Let's add operations and maintenance handoff to the model.
+
+Adding parts to the lifecycle model (in green).
+
+
+Improving the development life cycle model: Pipelines and models
+
+Two more things already displayed above: we added pipeline infrastructure and model assemblage. Points Merine Thomas also touched on (emphasis mine):
+
+Often we have to break the problem into multiple problems, create multiple models to solve each of those and put them into some sort of a pipeline. Most of the time, we have multiple of those cycles for each sub-problem to solve the bigger problem for the product/customer. I think it is worth calling that out, since that shows the complexity.
+
+– Merine Thomas, Architect, C3, source
+
+Getting models to production performance levels often involves combining models (ensemble learning), and/or sequencing models.
+
+Here's a real world example of breaking a problem down into sequenced sub-problems, each with a corresponding model, and using an ensemble method (i.e. the gradient boosting machine (GBM) at the end of the sequence). This is from Quick Check, shared by Don Teo at the C3 Research Forum put on by Borna Jafarpour:
+
+
+No matter whether we sequence multiple models, or use ensemble learning, there is always a pipeline. This touches a best-practice we need to take more seriously: end-to-end pipelines early in the process.
+
+See Google's Rules of Machine Learning or Agile Data Science for example:
+
+
+There are many benefits to this approach. Among them, pipelines are the back bone of operations: DevOps, DataOps, ModelOps. Monitoring in particular is the 'last mile' in closing the loop – and a critical input to effective planning!
+
+
+Monitoring is how we achieve quality assurance in practice – in the face of collaboration, change and uncertainty – beyond whatever testing gets implemented. Let's also add monitoring to our continuous practices.
+
+Adding end-to-end pipelines; model evaluation, selection and assemblage; monitoring (in green).
+
+
+Again, this is something Google's Rules of ML emphasizes:
+
+Prioritize a solid end-to-end pipeline.
+Practice good hygiene: monitor pipeline with metrics, dashboards and alerts.
+Test infrastructure separate from machine-learning.
+Start with heuristics, mature into features + ML.
+Scale the number of features with the size of data.
+Plan to continuously launch new models.
+
+End-to-end pipelines and monitoring is how industrialize our operations.
+
+Strategy: Continuous practices
+
+We can also be much more explicit about we fit into TR's strategic goals, how we create and share high-value assets, and simply just operate C3 better.  Let's further enrich our model with these continuous practices.
+
+We have executive leadership committed across product and engineering to "shared capabilities". We should be strategically building a portfolio of reusable assets and shared capabilities across projects (or rather get a lot better at it – see Helix etc.). Let's add reusable assets and shared capabilities to our continuous practices.
+
+We have an obligation to broadcast updates about our work.  We also have incredible opportunities to provide lessons learned and 'thought leadership' across the company. Let's add communications and updates to our continuous practices.
+
+"Work that is not shared is work that is not celebrated" – Khalid Al-Kofahi
+
+Lastly, we also have conventions (new and old) that make for keeping projects artifacts well organized and easy to archive (and a lot of room to improve here). Let's add organizing artifacts + archiving to our continuous practices.
+
+Being more explicit about our strategy, mapping into continuous practices (in green).
+
+
+Why it matters?
+
+We have a fantastic opportunity to step beyond our traditional role and begin to lead. Thought leadership, reusable assets and shared capabilities, being well organized – means we can have more impact. It's that simple.
+
+Yes. We seem perpetually tight on resources, but I 100% believe we can deliver more value with the same or similar level of burden with better strategy;  by being more organized, having a 'playbook' we can use for ourselves and to share with the rest of the company, by continuing to strategically develop shared capabilities and reusable assets.
+
+TR is already aimed in this direction: AI/ML, cloud, top-down executive reorgs and the reforms they're carrying out, are all massive waves in the same direction. We have SO MUCH to offer here, we need to step into it and lead.
+
+Can you speak to your thoughts about the kinds of centers of excellence you've envisioned for the new org, their focus etc.?
+
+[...] I'll mention some areas where we've spent some time really thinking about what it needs to be going forward. [...] We've spent quite a lot of time with Labs and C3 teams. AI/ML are an absolute core part of how we build our products and the strategic play we want to make with that mixture of content and machine learning in terms of how we offer products to our customers. So quite a lot of time looking at that team and what else we need to do there. That team will grow over time and continue to be a core asset for us and how we operate.
+
+– Kirsty Roth, Chief Operations & Technology Officer, Thomson Reuters, source
+
+We're going to miss an opportunity to make the most of what we have to offer if we don't grow beyond our historical identity of C3 as a 'consultant' for BUs... essentially performing specialized contract work for their new product development teams. Let's be more explicit about this.
+
+Make my shoulders broader, not my burden lighter – Atlas when asking Zeus for sympathy
+
+And now we get to do it with Labs and Mans Olof-Ors' leadership! Officially!
+
+Strategy: Contextualizing execution details in a larger framework
+
+Mike Wojciechowski's contributions regarding development details (scrum, sprints, meeting regiments, etc.) are important for how we administer execution of a project. We then made the execution lifecycle model more accurate by adding data acquisition, data annotation, end-to-end pipelines, model selection and assemblage, and several continuous practices just above.
+
+But what about pre-execution and post-execution? How do we continually improve – not just within projects but across them not just within C3 but across TR? What is the process for making useful updates to the project management process itself?
+
+A general framework for improving across projects: adding pre-execution, post-execution, a 'living' process with update procedures.
+
+
+Why it matters?
+
+The vast majority of our opportunity to improve C3 is at the organization level, not the individual project level. This is  how we are going to have the greatest impact on TR as whole. It's natural to iterate within the execution of a project. And I believe we are actually quite good at that. We have good people, experienced leadership, and work in earnest to understand and adapt to each project's demands. What about a more formal approach to how we mind iterate towards continuous improvement across projects?
+
+We should do pre-mortems and post-mortems. Going back to Mike Wojciechowski's theme of mitigating risk, there is a gap between decisions and outcome.
+
+Good decisions do not always lead to good outcomes and good outcomes are not always a result of good decisions. The existence of risk and uncertainty, "issues" and "opportunities", bad luck and good luck, mean there is an imperfect correlation between quality of a decision and the quality of the outcome.
+
+How does our project management process recognize this distinction and determine when to update the process, or not, based on good or bad outcomes? When is it "Time to regroup" and update the process? When did we get unlucky, need to stick to stick to our guns, and go "on to the next one" regardless of a poor outcome?
+
+
+Annie Duke is a NFS awarded student of psychology and championship poker player with a lot of great literature about making decisions under uncertainty. One of the techniques she discusses is a pre-mortem.
+
+Pre-mortem: a managerial strategy in which a project team imagines that a project has failed, and then works backward to determine what potentially could lead to the failure of the project, before beginning that project.
+
+Performing and capturing pre-mortems prior to execution means we have something to reflect on in post-execution post-mortems.  All together this is a practice of better surfacing risk and learning lessons overtime that we don't have now.
+
+Thinking this way should help us both better place 'bets' with our resources upstream, and know better when and how to update our process in response to undesirable outcomes.
+
+We do not learn from experience. We learn from reflecting on experience. – John Dewey
+
+Strategy: Score cards
+
+The other bit introduced in the pre-execution and post-execution phases of the diagram above are score cards (concept score card and outcome score card). Going further with the idea of project management being a 'living' process for surfacing knowledge while aligning everyone around common strategies: I believe we can embed best-practices and strategies into lightweight check-lists or flow-charts.
+
+Here's an example of a pre-execution concept score card. It's designed to prioritize concepts which are able to achieve extreme levels of scale and automation because they contain a 'virtuous cycle' of producing more training data as users engage.
+
+It also provides a self-service means of educating everyone as to how the concept circumstances are likely to play out across dimensions of strategy, scale, maintenance, data, and turnaround time.
+
+
+We can take this further, beyond concept and outcome scoring, into other stages of the framework as well.
+
+Here's another (rougher) example for evaluating data acquisition, data annotation, and model development. This diagram's scoring is setup to prioritize getting more data labeled, over embedding more domain particulars because a strategic goal is generalizable technology we can turn into shared capabilities across domains. Both larger datasets and more generalizable models are higher value assets: choose more data first.
+
+
+Notice that this represents a strategic departure from our past emphasis on domain expertise. Domain expertise has value, but is ultimately a 'necessary evil'. It's required in practice, but ultimately makes our learning systems brittle, and potentially irrelevant over a long enough timeline as AI/ML advance in the general market.
+
+This idea is known as the Bitter Lesson – and perhaps holds a key to unlocking our past inability to generalize our AI/ML technology across domains. We should be getting familiar with it!
+
+Could score cards like this become a vehicle for spreading our expertise and strategies across the org? Imagine these diagrams making up a 'playbook' which maps directly into the stages of the larger execution framework introduced above.
+
+Statement of purpose
+
+With all this in mind, I believe we can arrive at a clearer statement who we are and what we do:
+
+We combine the latest research and tested best-practices to create highly generalizable technology that's easy to deploy, easy to maintain, and makes for great user-experiences.
+
+Our goal is to delight customers with powerful automations and intuitive workflows – while empowering our colleagues with shared capabilities and ideas that advance practices across TR and society at large.
+
+Putting it all together
+
+Thank you tremendously if you've made it this far. I'm aware that this is A LOT to consider. I've tried my best to make it high-signal: to make clear arguments and provide supporting evidence to work against as we move forward from here together.
+
+What do you think?
+
+
+{% endfilter %}
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+<script src="{{ url_for('a_better_machine_learning_execution_framework.static', filename='a-better-machine-learning-execution-framework.js') }}"
+        type="text/javascript"></script>
+<script>
+    $("#loading").removeClass('active');
+</script>
+{% endblock %}

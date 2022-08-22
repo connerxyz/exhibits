@@ -1,0 +1,44 @@
+{% extends "base-container.html" %}
+
+{% block title %}about{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block container %}
+<!-- TODO -->
+<div class="ui container">
+    {% filter markdown %}
+
+    <button class="ui twitter button">
+        <i class="twitter icon"></i>
+        Twitter
+    </button>
+    <button class="ui instagram button">
+        <i class="instagram icon"></i>
+        Instagram
+    </button>
+    <button class="ui youtube button">
+        <i class="youtube icon"></i>
+        YouTube
+    </button>
+    <button class="ui vk button">
+        <i class="github icon"></i>
+        GitHub
+    </button>
+    <button class="ui linkedin button">
+        <i class="linkedin icon"></i>
+        LinkedIn
+    </button>
+
+    <iframe frameborder="0" height="320" scrolling="no" src="https://connerxyzz.substack.com/embed"
+            style="border:1px solid #EEE; background:white;" width="480"></iframe>
+
+    {% endfilter %}
+</div>
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+<script>$("#loading").removeClass('active');</script>
+{% endblock %}

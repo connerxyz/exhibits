@@ -1,0 +1,79 @@
+{% extends "base-container.html" %}
+
+{% block title %}about{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block container %}
+<!-- TODO -->
+<div class="ui container">
+    {% filter markdown %}
+
+    # conner.xyz
+
+    A media and technology firm created and led by Conner Carl Mingesz Cowling.
+
+    I'm Conner 👋 – CXYZ
+
+    <!-- Personality -->
+    I'm a multimedia creator, father, husband... But first I was a relentlessly curious, trouble making kid
+    from the American midwest. It wasn't until later that I learned to direct my energy and began leverage
+    technology to reach out across the world that I began to make at least some sense of it all.
+
+    <!-- Qualifications and experience -->
+    After pursuing an early visual art education, I went on to become an entrepreneur at 19. First freelancing graphic
+    design work, then running a successful retail electronics
+    business by 21, before going on to study computer science where I discovered an interest in large data, machine
+    learning, the web and a passion for the communities and experiences that could be created using these things.
+
+    - Research and development organizations.
+    - Focusing on unlocking creativity by building community and greater social ties, surfacing innovations created
+    within particular business-case driven development to get
+    - Running communications campaigns to push for more mature machine-learning practices beyond just the organizations'
+    research and development groups.
+    - I've been able to to work on... projects associated with millions of dollars in new revenue.
+
+    - I've more recently gotten involved with
+
+    <!-- Philosophy and vision -->
+
+    At a fundamental level, the fact that *anything exists* at all continues to be deeply profound to me. It's a source
+    endless gratitude that continues to drive me to create, experiment, and pursue ideas as far as possible. It
+    all comes down to committing to the work and relationships that energize you.
+
+    *This site and all the work it exhibits were produced by myself and various collaborators across the globe.
+    Keep up with me via email or the networks below.*
+
+    <button class="ui twitter button">
+        <i class="twitter icon"></i>
+        Twitter
+    </button>
+    <button class="ui instagram button">
+        <i class="instagram icon"></i>
+        Instagram
+    </button>
+    <button class="ui youtube button">
+        <i class="youtube icon"></i>
+        YouTube
+    </button>
+    <button class="ui vk button">
+        <i class="github icon"></i>
+        GitHub
+    </button>
+    <button class="ui linkedin button">
+        <i class="linkedin icon"></i>
+        LinkedIn
+    </button>
+
+    <iframe frameborder="0" height="320" scrolling="no" src="https://connerxyzz.substack.com/embed"
+            style="border:1px solid #EEE; background:white;" width="480"></iframe>
+
+    {% endfilter %}
+</div>
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+<script>$("#loading").removeClass('active');</script>
+{% endblock %}

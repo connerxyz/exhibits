@@ -1,0 +1,112 @@
+[
+  {
+    "skill": "Jenkins",
+    "weight": 0.65,
+    "type": "tool"
+  },
+  {
+    "skill": "Elastisearch",
+    "weight": 0.7,
+    "type": "tool"
+  },
+  {
+    "skill": "Python",
+    "weight": 0.95,
+    "type": "language"
+  },
+  {
+    "skill": "Jupyter",
+    "weight": 0.85,
+    "type": "tool"
+  },
+  {
+    "skill": "SQL",
+    "weight": 0.85,
+    "type": "language"
+  },
+  {
+    "skill": "Hadoop",
+    "weight": 0.85,
+    "type": "tool"
+  },
+  {
+    "skill": "machine-learning",
+    "weight": 0.6,
+    "type": "topic"
+  },
+  {
+    "skill": "natural-language-processing",
+    "weight": 0.7,
+    "type": "topic"
+  },
+  {
+    "skill": "information-retrieval",
+    "weight": 0.6,
+    "type": "topic"
+  },
+  {
+    "skill": "Java",
+    "weight": 0.5,
+    "type": "language"
+  },
+  {
+    "skill": "Scala",
+    "weight": 0.6,
+    "type": "language"
+  },
+  {
+    "skill": "Visualization",
+    "weight": 0.9,
+    "type": "topic"
+  },
+  {
+    "skill": "D3.js",
+    "weight": 0.75,
+    "type": "tool"
+  },
+  {
+    "skill": "matplotlib",
+    "weight": 0.8,
+    "type": "tool"
+  },
+  {
+    "skill": "HTML/CSS/JS",
+    "weight": 0.75,
+    "type": "language"
+  },
+  {
+    "skill": "Git",
+    "weight": 0.7,
+    "type": "tool"
+  },
+  {
+    "skill": "*nix systems",
+    "weight": 0.65,
+    "type": "topic"
+  },
+  {
+    "skill": "Entrepreneurship",
+    "weight": 0.55,
+    "type": "topic"
+  },
+  {
+    "skill": "C/C++",
+    "weight": 0.45,
+    "type": "language"
+  },
+  {
+    "skill": "User interface",
+    "weight": 0.7,
+    "type": "topic"
+  },
+  {
+    "skill": "User experience",
+    "weight": 0.7,
+    "type": "topic"
+  },
+  {
+    "skill": "graphic-design",
+    "weight": 0.7,
+    "type": "topic"
+  }
+]

@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+
+{% block title %}Resume{% endblock %}
+{% block head %}
+{{ super() }}
+<link href="{{ url_for('resume.static', filename='css/exhibit.css') }}" media="all" rel="stylesheet" type="text/css">
+<!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='semantic-ui/components/list.css') }}">-->
+<!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='semantic-ui/components/label.css') }}">-->
+{% endblock %}
+
+{% block content %}
+{% filter markdown %}
+<div class="res-mast">
+    <!--<div class="res-mast-img-container">-->
+    <!--<img src="https://pbs.twimg.com/profile_images/915284287137636352/KRXjKjZR_400x400.jpg"/>-->
+    <!--</div>-->
+    <div class="avatar-container">
+        <img src="https://pbs.twimg.com/profile_images/915284287137636352/KRXjKjZR_400x400.jpg"/>
+    </div>
+    <div class="mast-text">
+        <div class="flex-grid">
+            <h1 class="col res-name">Conner</br>Cowling</h1>
+            <h2 class="col res-subtitle">Software-Engineering +</br>Machine-Learning +</br>Product-Development</h2>
+        </div>
+        <div class="flex-grid">
+            <div class="col">
+                Husband & father. Code-author. Voracious reader. Full-stacker.
+                Intersector. Heeding the laws of Conway, Parkinson, & Gall. Strong
+                opinions loosely held. Set out to make art. Stayed for the code.
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="res-contact">
+    <li>414-690-9456</li>
+    <li>connercarl@gmail.com</li>
+    <li>6915 W. 23rd St. Saint Louis Park, MN 55426</li>
+</ul>
+
+<div class="skills-summary">
+    {% for skill in skills if skill.type == "language" %}
+    <div class="skill {{ skill.type }}">
+        {{ skill.skill }}
+    </div>
+    {% endfor %}
+    {% for skill in skills if skill.type == "tool" %}
+    <div class="skill {{ skill.type }}">
+        {{ skill.skill }}
+    </div>
+    {% endfor %}
+    {% for skill in skills if skill.type == "topic" %}
+    <div class="skill {{ skill.type }}">
+        {{ skill.skill }}
+    </div>
+    {% endfor %}
+</div>
+
+<h1 class="res-section">Career-History</h1>
+<h2 class="res-title">Research Engineer</h2>
+<h3 class="res-organization">Thomson Reuters Labs: Research & Development – Minneapolis, MN</h3>
+<!--#### 08/2016 - today-->
+
+<h4 class="res-project">WestlawEdge: Litigation Analytics</h4>
+
+Led development of production docket classifier components (patents pending)
+
+- *Verdict outcome classifier:* high-class imbalance (1.5% verdict rate), multinomial naive-Bayes, initially learned with 29 examples, scaled to 7.5+ million dockets achieving precision and recall of 65% and 98%
+- *Multidistrict-litigation classifier:* rule-based, precision and recall of 95% and 95%.
+
+<h4 class="res-project">WestlawEdge: question answering</h4>
+
+- Mined Westlaw query logs to identify statistically significant characteristics of successful queries performed by editorial reference attorneys
+- Led development of error-analysis web application for general information-retrieval problems. Based around NIST's [`trec_eval`](https://github.com/usnistgov/trec_eval) library including additional metrics, user-interface with responsive D3.js visualizations, and backend data ingest utilities.
+
+<h4 class="res-project">Resource development</h4>
+
+- Led development of onboarding website for streamlining 40+ hires per year
+- Led development of deep-dive, an educational website and quick-reference resource covering tech-stacks, back-ends, technical-summaries, etc.
+- Led development of TRBookmarks: A corporate wide resource for structuring and aggregating links
+- Compiled and published internal corpora library for facilitating NLP research: 10+TB, "classic" Reuters corpora, Freebase, Clueweb12, misc. LDC corpora, etc.
+
+- Python, Jupyter, Java, Scala, Hadoop, Spark, SQL, HTML/CSS/JS, Machine-Learning, Natural Language Processing, Information-Retrieval, Document Classification, *nix System Administration, User-Experience, Data-Visualization
+
+<h2 class="res-title">Data Scientist & Research Engineer</h2>
+<h3 class="res-organization">Honeywell ACS Global Labs: Decision Support Technologies – Minneapolis, MN</h3>
+<!--#### 06/2015 - 08/2016-->
+
+#### Connected worker & warehouse logistics analytics:
+
+- Led development of dialogue parser for structuring data captured from voice-enabled warehouse devices, an upstream data-ingest layer affording the following applications...
+- Led development of generalizable performance ranking and task difficulty algorithms for identifying effective/ineffective employees normalized by the size and difficulty of the tasks assigned to them.
+- Developed different visualization techniques to illustrate directional flow to identify traffic patterns, picking sequences, etc.
+- Predicting when employees will quit: survival analysis
+- IoT asset tracking pilot: Installed and tested different radio based technologies (Bluetooth, RFID, WiFi fingerprinting) for tracking forklifts and other assets: Gold "Global Bravo" Award received
+
+#### Commercial & residential security system analytics:
+
+- Led development of automated pipeline for digesting daily SQL dumps into optimized Hive database (7+TB as of July 2016), an upstream data-ingest layer affording the following applications...
+- User engagement ratings and predicting user-churn: logistic-regression
+- Alarm classification pilot: attempting to link security system alarms with events contained within municipal crime records for Detroit metro.
+
+#### Device traffic & resource development
+
+- Forecast modeling of server loads produced by smart-thermostat device traffic: regression
+- Led development of rapid-prototyping web-application platform based on [Agile-Data-Science](http://shop.oreilly.com/product/0636920051619.do)
+- Python, Jupyter, Java, Scala, Hadoop:Yarn/Hive/Spark, D3.js, HTML/CSS/JS, Azure, MongoDB, SQL, Git, Bash, *nix Systems
+
+<h2 class="res-title">Research Fellow</h2>
+<h3 class="res-organization">University of Minnesota: Prof. Vipin Kumar's Data-Mining Group – Minneapolis, MN</h3>
+<!--#### 08/2014 - 03/2015-->
+
+- Attempting to answer do extreme temperatures are linked with health outcomes, Partnership with Columbia University
+- Led development of interactive data visualization of extreme temperatures across New York State using [NOAA GHCND](https://www.ncdc.noaa.gov/data-access/land-based-station-data/land-based-datasets/global-historical-climatology-network-ghcn) data
+- Python, LAMP stack, D3.js, HTML/CSS/JS
+
+<h2 class="res-title">Research Engineer Intern</h2>
+<h3 class="res-organization">Thomson Reuters, Research & Development: Enterprise Platform Group</h3>
+<!--#### 06/2014 - 08/2014-->
+
+#### Project BOLD (Big Open Linked Data)
+
+- Data-preprocessing/feature-extraction for collaborative-filtering based recommendation system using legal & financial data, precision and recall of  85% and 85% respectively
+- Data-visualization, initial user-interface design and development of web-application for evaluating trades recommended on Twitter against historical stock-prices
+- Python, SQL, Spark, Recommender Systems, D3.js, HTML/CSS/JS, Machine-Learning, User-interface
+
+<h2 class="res-title">Mobile Software Development Intern</h2>
+<h3 class="res-organization">Livefront: Mobile Application Design & Development Firm - Minneapolis, MN</h3>
+<!--#### 06/2013 - 05/2014-->
+
+- Developed iOS client-application for social/professional network: [Acclaim](https://www.youracclaim.com/)
+- Objective-C, Cocoa Touch, XCode, Git
+
+<h2 class="res-title">Web Developer & Graphic Designer</h2>
+<h3 class="res-organization">University of Minnesota Law School: Communications – Minneapolis, MN</h3>
+<!--#### 08/2011 - 06/2013-->
+
+- Extensive HTML/CSS implementation and designed, produced and distributed digital and print communications materials.
+- Audited social media outlets and initiated cross-department social-media account reorganization leading to 30% social media subscriber increase
+- HTML/CSS, Adobe Creative Suite, Graphic-Design, Social Media
+
+<h2 class="res-title">Owner/Partner</h2>
+<h3 class="res-organization">GlowsGoods electronics retailer – Portland, OR</h3>
+<!--#### 09/2010 - 09/2011-->
+
+- Operations oversight: Customer Service, Accounting, Order Fulfillment of $500,000 sales annually
+- Managed development of web application to create and manage product listings, reducing our most time consuming tasks by 60%
+
+<h1 class="res-section">Community-Development</h1>
+
+<h2 class="res-title">Cofounder</h2>
+<h3 class="res-organization">[MinneHack](http://minnehack.io/) – Minneapolis, MN</h3>
+<!--#### 2015 - 2018-->
+
+- An annual 24 hour student hackathon: completely free, including regional bus transportation, general travel-reimbursment, food, and other accomodations
+- Largest known hackathon in midwest: 2x fully [MLH](https://mlh.io/) commissioned: North American seasons (2017, 2018)
+- More than 400+ attendees, from 15+ colleges & universities, across 10+ states, made possible with 20+ corporate and community sponsors
+- Operations oversight: fundraising, budgeting, promotions, community-relations, master-of-ceremonies, public-speaking (2015)
+- Mentor & creative director: logo & branding, web design & development, copy-writing (2017, 2018)
+
+<h2 class="res-title">Board of Directors: Membership Officer</h2>
+<h3 class="res-organization">Association for Computing Machinery: University of Minnesota – Minneapolis, MN</h3>
+<!--#### 06/2014 – 05/2015-->
+
+- Streamlined membership benefits to make value proposition more clear and competitive with respect to other organizations (e.g. IEEE)
+- Grew membership rolls by 50% through public speaking and promotion efforts; increased diversity: gender, nationality, ethnicity, race, age, etc.
+- Initiated and maintained email list: campaign analytics, design, copy-writing, content-sourcing.
+- Maintained internal software systems: applications, databases, servers
+- Python, Web:HTML/CSS/JS, SQL, *nix systems, promotions, recruitment, public-speaking, graphic-design, copy-writing
+
+<h2 class="res-title">Finance & funding team</h2>
+<h3 class="res-organization">[TEDxUMN](http://www.tedxumn.com/)</h3>
+<!--#### 2014-->
+
+- An annual TED-style event produced by the local community
+- Budgeting, fundraising, evangelism for 1st year event
+
+<h2 class="res-title">Volunteer Mentor: Python/Web/Arduino</h2>
+<h3 class="res-organization">[CoderDojo: Twin-Cities](https://www.coderdojotc.org/)</h3>
+
+- A global network of free computer, volunteer-led, programming clubs for young people ages 7-17: Teaching kids how to code
+
+<h1 class="res-section">Formal-Learning</h1>
+
+<h2 class="res-title">Bachelor of Science, Computer Science</h2>
+<h3 class="res-organization">University of Minnesota, Twin Cities (2011 - 2015)</h3>
+
+- Cumulative GPA 3.629
+- Dean's List 2011, 2014, 2015
+- Product design focused electives
+
+<h2 class="res-title">Audio-Engineering Certification</h2>
+<h3 class="res-organization">Milwaukee Area Technical College (2006-2008)</h3>
+
+<h1 class="res-section">Awards</h1>
+
+- Honeywell Gold "Global Bravo" award for IoT warehouse logistics pilot (2016)
+- A.I. student software design competition semi-finalist (2013)
+- 3x University of Minnesota dean's list (2011, 2014, 2015)
+- 2x outstanding employee award - University of Minnesota Law School (2012, 2013)
+- Ikon metal design contest finalist (2008)
+- Columbus College of Art & Design Dean's Award
+- Scholastic Silver Key
+- Renatra Fusca creative problem solving award, Odyssey of the Mind (1997)
+
+<h1 class="res-section">Talks</h1>
+
+- Deep-Learning & the Information Bottleneck principle: presenting the work of Naftali Tishby et al. (2018)
+- Counter-fitting word vectors to linguistic constraints: presenting the work of Nikola Mrkšić et al. (2016)
+- D3.js crash course: a data-driven-documents training seminar (2016)
+- Introduction to [Agile Data Science](http://shop.oreilly.com/product/0636920051619.do) (2016)
+- TRiO: outreach program for disadvantaged students, Computer-Science Guest Speaker (2013)
+- Sketch Off: *Who's line is it anyway?* for sketch artists (2013, 2014)
+
+<h1 class="res-section">Miscellany</h1>
+
+- Family-man: wife + daughters + dog
+- Fitness: soccer, jump-rope, calisthenics, meditation
+- Last five things I've read/reading (as of June 4, 2018):
+<ul>
+    <li>*Myths of Innovation* - Scott Berkun</li>
+    <li>*How Buildings Learn* - Stewart Brand</li>
+    <li>*Docker Deep-Dive* - Nigel Poulton</li>
+    <li>*Nature of the Firm* - Ronald Coase</li>
+    <li>*Internet Trends* - Mary Meeker</li>
+</ul>
+
+{% endfilter %}
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+{% endblock %}

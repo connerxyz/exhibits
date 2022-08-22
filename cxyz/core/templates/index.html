@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}exhibits{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="ui container">
+    {% filter markdown %}
+    {% endfilter %}
+    <div class="ui grid">
+        <div class="ui sixteen wide column">
+            <div class="ui category search JS--search search-post">
+                <div class="ui icon input">
+                    <input class="prompt" placeholder="Search..." type="text">
+                    <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
+            </div>
+        </div>
+    </div>
+    <div class="ui stackable doubling four column grid">
+        {% for blueprint in blueprints %}
+        <div class="column">
+            <div class="ui fluid link card">
+                <a class="image" href="{{ blueprint.url }}">
+                    <img src="{{ url_for('{}.static'.format(blueprint.name), filename='thumbnail.png') }}">
+                </a>
+                <div class="content">
+                    <a class="header exhibit-title" href="{{ blueprint.url }}">{{ blueprint.display_name }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+<script>
+    let blueprints = {
+    {
+        blueprints | tojson | safe
+    }
+    }
+
+    var newData = [];
+    $.each(blueprints, function (i, d) {
+        // Remap JSON values.
+        var obj = {
+            category: d.name,
+            title: d.display_name,
+            description: d.thumbnail,
+            url: d.url,
+            image: d.thumbnail
+        }
+        newData.push(obj);
+    });
+
+
+    $.fn.search.settings.templates.category = function (
+        response,
+        fields
+    ) {
+
+        var html = "",
+            escape = $.fn.search.settings.templates.escape;
+
+
+        if (response[fields.categoryResults] !== undefined) {
+            // each category
+            $.each(response[fields.categoryResults], function (index, category) {
+                if (
+                    category[fields.results] !== undefined &&
+                    category.results.length > 0
+                ) {
+
+                    $.each(category.results, function (index, result) {
+                        if (result[fields.url]) {
+                            html += '<a class="result" href="' + result[fields.url] + '">';
+                        } else {
+                            html += '<a class="result">';
+                        }
+                        // Don't plan on supporting images in the drop-down.
+                        if (result[fields.image] !== undefined) {
+                            html +=
+                                "" +
+                                '<div class="image">' +
+                                ' <img src="' + result[fields.url] + "/" + result[fields.image] + '">' +
+                                "</div>";
+                        }
+                        html += '<div class="content">';
+                        if (result[fields.title] !== undefined) {
+                            html += '<div class="title">' + result[fields.title];
+                            html += '</div>'
+                        }
+
+                        html += "" + "</div>";
+                        html += "</a>";
+                    });
+                    html += "</div>";
+                    html += "" + "</div>";
+                }
+            });
+            if (response[fields.action]) {
+                html +=
+                    "" +
+                    '<a href="' +
+                    response[fields.action][fields.actionURL] +
+                    '" class="action">' +
+                    response[fields.action][fields.actionText] +
+                    "</a>";
+            }
+            return html;
+        }
+        return false;
+    };
+
+    $('.JS--search')
+        .search({
+            source: newData,
+            type: "category",
+            duration: 100,
+            maxResults: 5,
+            showNoResults: true,
+            fullTextSearch: 'exact',
+            searchFields: ['title']
+        })
+    ;
+    console.log(newData);
+    $("#loading").removeClass('active');
+</script>
+{% endblock %}
