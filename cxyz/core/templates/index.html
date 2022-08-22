@@ -40,11 +40,7 @@
 {% block footer %}
 {{ super() }}
 <script>
-    let blueprints = {
-    {
-        blueprints | tojson | safe
-    }
-    }
+    let blueprints = {{ blueprints | tojson | safe }}
 
     var newData = [];
     $.each(blueprints, function (i, d) {

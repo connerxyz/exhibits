@@ -14,5 +14,5 @@ bone_and_ash.published = True
 @bone_and_ash.route('/')
 def _bone_and_ash():
     images = os.listdir(os.getcwd() + "/cxyz/exhibits/bone_and_ash/img")
-    images = ["img/" + i for i in images]
+    images = ["img/" + i for i in images if ".DS_Store" not in i]
     return render_template('bone-and-ash.html', images=images)

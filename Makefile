@@ -1,5 +1,4 @@
 SHELL          = /bin/bash
-FLASK_APP_DEV  = cxyz
 
 # Misc dev utilities
 
@@ -12,11 +11,15 @@ clean-logs:
 	rm ./cxyz/log/*
 
 # Serve locally for development purposes
-dev: export FLASK_APP=${FLASK_APP_DEV}
-dev: export FLASK_ENV=development
+dev: export FLASK_APP=cxyz
+dev: export FLASK_DEBUG=True
 dev: export FLASK_RUN_PORT=5001
 dev:
 	poetry run flask run
+
+# Delete any prior build
+clean:
+	rm -rf docs/
 
 # Build static site using Flask Freezer
 build:
@@ -24,7 +27,7 @@ build:
 	echo "New site build written to docs/"
 
 # Deploy static build to GitHub Pages
-deploy: build
+deploy: build, clean
 	git add docs/
 	git commit "New site build."
 	git push
