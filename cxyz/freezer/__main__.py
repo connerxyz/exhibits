@@ -4,7 +4,7 @@ from cxyz import app
 freezer = Freezer(app)
 
 app.config['FREEZER_DESTINATION'] = "../docs/"
-app.config['FREEZER_BASE_URL'] = "https://connerxyz.github.io/sandbox/"
+app.config['FREEZER_BASE_URL'] = "https://connerxyz.github.io/exhibits/"
 app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 app.config['FREEZER_STATIC_IGNORE'] = [
     '**/_',
