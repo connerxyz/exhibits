@@ -40,18 +40,6 @@ from .misc import misc
 
 app.register_blueprint(misc, url_prefix="/misc")
 
-# from .quick_and_dirty_jupyter_notebook_pipelines import quick_and_dirty_jupyter_notebook_pipelines
-# app.register_blueprint(quick_and_dirty_jupyter_notebook_pipelines, url_prefix="/quick-and-dirty-jupyter-notebook-pipelines")
-
-# from .speed_and_stability import speed_and_stability
-# app.register_blueprint(speed_and_stability, url_prefix="/speed-and-stability")
-
-# from .launching_a_flask_app_using_aws_elastic_beanstalk import launching_a_flask_app_using_aws_elastic_beanstalk
-# app.register_blueprint(launching_a_flask_app_using_aws_elastic_beanstalk, url_prefix="/launching-a-flask-app-using-aws-elastic-beanstalk")
-
-# from .a_better_machine_learning_execution_framework import a_better_machine_learning_execution_framework
-# app.register_blueprint(a_better_machine_learning_execution_framework, url_prefix="/a-better-machine-learning-execution-framework")
-
 from .deca import deca
 
 app.register_blueprint(deca, url_prefix="/deca")
