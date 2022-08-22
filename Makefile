@@ -27,9 +27,9 @@ build:
 	echo "New site build written to docs/"
 
 # Deploy static build to GitHub Pages
-deploy: build, clean
+deploy: clean build
 	git add docs/
-	git commit "New site build."
+	git commit -m "New site build."
 	git push
 
 # Prepare package for Elastic Beanstalk deployment
