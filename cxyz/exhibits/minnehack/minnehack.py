@@ -7,6 +7,7 @@ minnehack = Blueprint('minnehack',
                       template_folder='./',
                       static_folder='./',
                       static_url_path='/')
+minnehack.published = True
 
 
 @minnehack.route('/')

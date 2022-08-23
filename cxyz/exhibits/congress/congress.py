@@ -5,6 +5,7 @@ congress = Blueprint('congress',
                      template_folder='./',
                      static_folder='./',
                      static_url_path='/')
+congress.published = True
 
 
 @congress.route('/')

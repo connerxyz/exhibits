@@ -8,9 +8,10 @@ app.config['FREEZER_BASE_URL'] = "https://connerxyz.github.io/exhibits/"
 app.config['FREEZER_IGNORE_MIMETYPE_WARNINGS'] = True
 app.config['FREEZER_STATIC_IGNORE'] = [
     '**/_',
-    '**/_img'
-    '**/junk'
-    '*.key'
+    '**/_img',
+    '**/junk',
+    '*.key',
+    '*.py',
 ]  # TODO figure out a consistent approach / system for all these source media in each exhibit
 
 if __name__ == '__main__':

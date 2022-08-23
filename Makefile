@@ -10,9 +10,17 @@ test:
 clean-logs:
 	rm ./cxyz/log/*
 
-# Serve locally for development purposes
+# Serve locally for development purposes (including unpublished)
+dev-all: export FLASK_APP=cxyz
+dev-all: export FLASK_DEBUG=True
+dev-all: export FLASK_RUN_PORT=5001
+dev-all: export SHOW_UNPUBLISHED=True
+dev-all:
+	poetry run flask run
+
+# Serve locally for development purposes (only published)
 dev: export FLASK_APP=cxyz
-dev: export FLASK_DEBUG=True
+dev: export FLASK_DEBUG=False
 dev: export FLASK_RUN_PORT=5001
 dev:
 	poetry run flask run

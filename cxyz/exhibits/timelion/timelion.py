@@ -8,6 +8,7 @@ timelion = Blueprint('timelion',
                      static_folder='./',
                      static_url_path='/',
                      )
+timelion.published = True
 
 
 @timelion.route('/')

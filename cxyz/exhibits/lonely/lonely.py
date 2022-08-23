@@ -5,6 +5,7 @@ lonely = Blueprint('lonely',
                    template_folder='./',
                    static_folder='./',
                    static_url_path='/')
+lonely.published = True
 
 
 @lonely.route('/')

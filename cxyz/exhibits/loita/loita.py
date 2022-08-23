@@ -8,6 +8,7 @@ loita = Blueprint('loita',
                   static_url_path='/')
 
 loita.display_name = "lost in the abyss"
+loita.published = True
 
 
 @loita.route('/')
