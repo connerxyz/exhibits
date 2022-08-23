@@ -37,9 +37,7 @@ class Exhibit:
         if hasattr(blueprint, 'published'):
             return blueprint.published
         else:
-            # TODO reverse this. Add published field to all exhibits.
-            # Assume no published attribute means go ahead and publish.
-            return True
+            return False
 
     @staticmethod
     def _url(blueprint):
