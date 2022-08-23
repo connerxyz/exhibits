@@ -1,1 +1,0 @@
-from .covid_19_gold_data import covid_19_gold_data

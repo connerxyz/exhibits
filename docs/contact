@@ -8,17 +8,17 @@
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="/sandbox/static/favicon_io/apple-touch-icon.png" rel="apple-touch-icon"
+    <link href="/exhibits/static/favicon_io/apple-touch-icon.png" rel="apple-touch-icon"
           sizes="180x180">
-    <link href="/sandbox/static/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32"
+    <link href="/exhibits/static/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32"
           type="image/png">
-    <link href="/sandbox/static/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16"
+    <link href="/exhibits/static/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16"
           type="image/png">
-    <link href="/sandbox/static/favicon_io/site.webmanifest" rel="manifest">
+    <link href="/exhibits/static/favicon_io/site.webmanifest" rel="manifest">
     <!-- TODO rely on CDN for semantic? -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet"
           type="text/css">
-    <link href="/sandbox/static/style.css" media="all" rel="stylesheet">
+    <link href="/exhibits/static/style.css" media="all" rel="stylesheet">
     <title>about</title>
 </head>
 
@@ -31,8 +31,8 @@
     <div class="ui container">
         <a class="header item" href="/">CXYZ</a>
         <div class="right menu">
-            <a class="item" href="/sandbox/about">about</a>
-            <a class="item" href="/sandbox/contact">contact</a>
+            <a class="item" href="/exhibits/about">about</a>
+            <a class="item" href="/exhibits/contact">contact</a>
             <!--          <div class="item">-->
             <!--            <div class="ui icon input">-->
             <!--              <input type="text" placeholder="Search...">-->
