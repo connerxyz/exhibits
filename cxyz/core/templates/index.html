@@ -13,7 +13,7 @@
         <div class="ui sixteen wide column">
             <div class="ui category search JS--search search-post">
                 <div class="ui icon input">
-                    <input class="prompt" placeholder="Search..." type="text">
+                    <input id="searchInput" class="prompt" placeholder="Search..." type="text">
                     <i class="search icon"></i>
                 </div>
                 <div class="results"></div>
@@ -40,8 +40,8 @@
 {% block footer %}
 {{ super() }}
 <script>
+    // Rendering exhibits
     let blueprints = {{ blueprints | tojson | safe }}
-
     var newData = [];
     $.each(blueprints, function (i, d) {
         // Remap JSON values.
@@ -55,16 +55,13 @@
         newData.push(obj);
     });
 
-
+    // Setting up search
     $.fn.search.settings.templates.category = function (
         response,
         fields
     ) {
-
         var html = "",
             escape = $.fn.search.settings.templates.escape;
-
-
         if (response[fields.categoryResults] !== undefined) {
             // each category
             $.each(response[fields.categoryResults], function (index, category) {
@@ -72,7 +69,6 @@
                     category[fields.results] !== undefined &&
                     category.results.length > 0
                 ) {
-
                     $.each(category.results, function (index, result) {
                         if (result[fields.url]) {
                             html += '<a class="result" href="' + result[fields.url] + '">';
@@ -92,7 +88,6 @@
                             html += '<div class="title">' + result[fields.title];
                             html += '</div>'
                         }
-
                         html += "" + "</div>";
                         html += "</a>";
                     });
@@ -125,7 +120,16 @@
             searchFields: ['title']
         })
     ;
-    console.log(newData);
+
+    // Setup event listener to focus search by pressing "/"
+    document.addEventListener("keyup", function onEvent(event) {
+        if (event.key === "/") {
+            $("#searchInput").focus();
+        }
+    });
+
+    // Now remove loading spinner
     $("#loading").removeClass('active');
+
 </script>
 {% endblock %}
