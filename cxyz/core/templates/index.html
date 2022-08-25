@@ -39,6 +39,7 @@
 
 {% block footer %}
 {{ super() }}
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script>
     // Rendering exhibits
     let blueprints = {{ blueprints | tojson | safe }}
@@ -48,7 +49,7 @@
         var obj = {
             category: d.name,
             title: d.display_name,
-            description: d.thumbnail,
+            description: "Kramer's mom has got it going on",
             url: d.url,
             image: d.thumbnail
         }
@@ -60,8 +61,9 @@
         response,
         fields
     ) {
-        var html = "",
-            escape = $.fn.search.settings.templates.escape;
+        console.log(response);
+        console.log(fields);
+        var html = "", escape = $.fn.search.settings.templates.escape;
         if (response[fields.categoryResults] !== undefined) {
             // each category
             $.each(response[fields.categoryResults], function (index, category) {
@@ -69,41 +71,44 @@
                     category[fields.results] !== undefined &&
                     category.results.length > 0
                 ) {
+                    // Start rendering each search result
                     $.each(category.results, function (index, result) {
-                        if (result[fields.url]) {
-                            html += '<a class="result" href="' + result[fields.url] + '">';
-                        } else {
-                            html += '<a class="result">';
-                        }
-                        // Don't plan on supporting images in the drop-down.
-                        if (result[fields.image] !== undefined) {
-                            html +=
-                                "" +
-                                '<div class="image">' +
-                                ' <img src="' + result[fields.url] + "/" + result[fields.image] + '">' +
-                                "</div>";
-                        }
-                        html += '<div class="content">';
-                        if (result[fields.title] !== undefined) {
-                            html += '<div class="title">' + result[fields.title];
-                            html += '</div>'
-                        }
-                        html += "" + "</div>";
-                        html += "</a>";
+                        html += `
+                            <a class="result" href="${result[fields.url]}">
+                                <div class="image">
+                                   <img src="${result[fields.url]}/${result[fields.image]}" class="ui image small;">
+                               </div>
+                               <div class="content">
+                                    <div class="title">${result[fields.title]}</div>
+                                    <div class="title">${result[fields.description]}</div>
+                               </div>
+                           </a>
+                       `
+                    //     if (result[fields.url]) {
+                    //         html += '<a class="result" href="' + result[fields.url] + '">';
+                    //     } else {
+                    //         html += '<a class="result">';
+                    //     }
+                    //     // Don't plan on supporting images in the drop-down.
+                    //     if (result[fields.image] !== undefined) {
+                    //         html +=
+                    //             "" +
+                    //             '<div class="image">' +
+                    //             ' <img src="' + result[fields.url] + "/" + result[fields.image] + '">' +
+                    //             "</div>";
+                    //     }
+                    //     html += '<div class="content">';
+                    //     if (result[fields.title] !== undefined) {
+                    //         html += '<div class="title">' + result[fields.title] + '</div>';
+                    //         html += '<div>' + result[fields.description] + '</div>';
+                    //     }
+                    //     html += "" + "</div>";
+                    //     html += "</a>";
                     });
                     html += "</div>";
                     html += "" + "</div>";
                 }
             });
-            if (response[fields.action]) {
-                html +=
-                    "" +
-                    '<a href="' +
-                    response[fields.action][fields.actionURL] +
-                    '" class="action">' +
-                    response[fields.action][fields.actionText] +
-                    "</a>";
-            }
             return html;
         }
         return false;
@@ -116,8 +121,8 @@
             duration: 100,
             maxResults: 5,
             showNoResults: true,
-            fullTextSearch: 'exact',
-            searchFields: ['title']
+            fullTextSearch: 'true',
+            searchFields: ['title', 'description']
         })
     ;
 
@@ -127,6 +132,9 @@
             $("#searchInput").focus();
         }
     });
+
+    console.log("newData");
+    console.log(newData);
 
     // Now remove loading spinner
     $("#loading").removeClass('active');
