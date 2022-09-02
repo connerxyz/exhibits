@@ -7,17 +7,17 @@
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="/exhibits/static/favicon_io/apple-touch-icon.png" rel="apple-touch-icon"
+    <link href="/static/favicon_io/apple-touch-icon.png" rel="apple-touch-icon"
           sizes="180x180">
-    <link href="/exhibits/static/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32"
+    <link href="/static/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32"
           type="image/png">
-    <link href="/exhibits/static/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16"
+    <link href="/static/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16"
           type="image/png">
-    <link href="/exhibits/static/favicon_io/site.webmanifest" rel="manifest">
+    <link href="/static/favicon_io/site.webmanifest" rel="manifest">
     <!-- TODO rely on CDN for semantic? -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet"
           type="text/css">
-    <link href="/exhibits/static/style.css" media="all" rel="stylesheet">
+    <link href="/static/style.css" media="all" rel="stylesheet">
     <title>exhibits</title>
 </head>
 
@@ -29,8 +29,8 @@
     <div class="ui container">
         <a class="header item" href="/">CXYZ</a>
         <div class="right menu">
-            <a class="item" href="/exhibits/about">about</a>
-            <a class="item" href="/exhibits/contact">contact</a>
+            <a class="item" href="/about">about</a>
+            <a class="item" href="/contact">contact</a>
             <!--          <div class="item">-->
             <!--            <div class="ui icon input">-->
             <!--              <input type="text" placeholder="Search...">-->
@@ -47,7 +47,7 @@
         <div class="ui sixteen wide column">
             <div class="ui category search JS--search search-post">
                 <div class="ui icon input">
-                    <input class="prompt" placeholder="Search..." type="text">
+                    <input id="searchInput" class="prompt" placeholder="Search..." type="text">
                     <i class="search icon"></i>
                 </div>
                 <div class="results"></div>
@@ -59,7 +59,7 @@
         <div class="column">
             <div class="ui fluid link card">
                 <a class="image" href="loita">
-                    <img src="/exhibits/loita/thumbnail.png">
+                    <img src="/loita/thumbnail.png">
                 </a>
                 <div class="content">
                     <a class="header exhibit-title" href="loita">lost in the abyss</a>
@@ -70,7 +70,7 @@
         <div class="column">
             <div class="ui fluid link card">
                 <a class="image" href="lonely">
-                    <img src="/exhibits/lonely/thumbnail.png">
+                    <img src="/lonely/thumbnail.png">
                 </a>
                 <div class="content">
                     <a class="header exhibit-title" href="lonely">lonely</a>
@@ -81,7 +81,7 @@
         <div class="column">
             <div class="ui fluid link card">
                 <a class="image" href="minnehack">
-                    <img src="/exhibits/minnehack/thumbnail.png">
+                    <img src="/minnehack/thumbnail.png">
                 </a>
                 <div class="content">
                     <a class="header exhibit-title" href="minnehack">minnehack</a>
@@ -92,7 +92,7 @@
         <div class="column">
             <div class="ui fluid link card">
                 <a class="image" href="congress">
-                    <img src="/exhibits/congress/thumbnail.png">
+                    <img src="/congress/thumbnail.png">
                 </a>
                 <div class="content">
                     <a class="header exhibit-title" href="congress">congress</a>
@@ -103,7 +103,7 @@
         <div class="column">
             <div class="ui fluid link card">
                 <a class="image" href="portraits">
-                    <img src="/exhibits/portraits/thumbnail.png">
+                    <img src="/portraits/thumbnail.png">
                 </a>
                 <div class="content">
                     <a class="header exhibit-title" href="portraits">portraits</a>
@@ -114,7 +114,7 @@
         <div class="column">
             <div class="ui fluid link card">
                 <a class="image" href="timelion">
-                    <img src="/exhibits/timelion/thumbnail.png">
+                    <img src="/timelion/thumbnail.png">
                 </a>
                 <div class="content">
                     <a class="header exhibit-title" href="timelion">timelion</a>
@@ -125,7 +125,7 @@
         <div class="column">
             <div class="ui fluid link card">
                 <a class="image" href="misc">
-                    <img src="/exhibits/misc/thumbnail.png">
+                    <img src="/misc/thumbnail.png">
                 </a>
                 <div class="content">
                     <a class="header exhibit-title" href="misc">misc</a>
@@ -136,7 +136,7 @@
         <div class="column">
             <div class="ui fluid link card">
                 <a class="image" href="bone-and-ash">
-                    <img src="/exhibits/bone-and-ash/thumbnail.png">
+                    <img src="/bone-and-ash/thumbnail.png">
                 </a>
                 <div class="content">
                     <a class="header exhibit-title" href="bone-and-ash">bone and ash</a>
@@ -160,32 +160,31 @@
 <script crossorigin="anonymous" integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI="
         src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script>
+    // Rendering exhibits
     let blueprints = [{"display_name": "lost in the abyss", "name": "loita", "published": true, "thumbnail": "thumbnail.png", "url": "loita"}, {"display_name": "lonely", "name": "lonely", "published": true, "thumbnail": "thumbnail.png", "url": "lonely"}, {"display_name": "minnehack", "name": "minnehack", "published": true, "thumbnail": "thumbnail.png", "url": "minnehack"}, {"display_name": "congress", "name": "congress", "published": true, "thumbnail": "thumbnail.png", "url": "congress"}, {"display_name": "portraits", "name": "portraits", "published": true, "thumbnail": "thumbnail.png", "url": "portraits"}, {"display_name": "timelion", "name": "timelion", "published": true, "thumbnail": "thumbnail.png", "url": "timelion"}, {"display_name": "misc", "name": "misc", "published": true, "thumbnail": "thumbnail.png", "url": "misc"}, {"display_name": "bone and ash", "name": "bone_and_ash", "published": true, "thumbnail": "thumbnail.png", "url": "bone-and-ash"}]
-
     var newData = [];
     $.each(blueprints, function (i, d) {
         // Remap JSON values.
         var obj = {
             category: d.name,
             title: d.display_name,
-            description: d.thumbnail,
+            description: "Kramer's mom has got it going on",
             url: d.url,
             image: d.thumbnail
         }
         newData.push(obj);
     });
 
-
+    // Setting up search
     $.fn.search.settings.templates.category = function (
         response,
         fields
     ) {
-
-        var html = "",
-            escape = $.fn.search.settings.templates.escape;
-
-
+        console.log(response);
+        console.log(fields);
+        var html = "", escape = $.fn.search.settings.templates.escape;
         if (response[fields.categoryResults] !== undefined) {
             // each category
             $.each(response[fields.categoryResults], function (index, category) {
@@ -193,43 +192,44 @@
                     category[fields.results] !== undefined &&
                     category.results.length > 0
                 ) {
-
+                    // Start rendering each search result
                     $.each(category.results, function (index, result) {
-                        if (result[fields.url]) {
-                            html += '<a class="result" href="' + result[fields.url] + '">';
-                        } else {
-                            html += '<a class="result">';
-                        }
-                        // Don't plan on supporting images in the drop-down.
-                        if (result[fields.image] !== undefined) {
-                            html +=
-                                "" +
-                                '<div class="image">' +
-                                ' <img src="' + result[fields.url] + "/" + result[fields.image] + '">' +
-                                "</div>";
-                        }
-                        html += '<div class="content">';
-                        if (result[fields.title] !== undefined) {
-                            html += '<div class="title">' + result[fields.title];
-                            html += '</div>'
-                        }
-
-                        html += "" + "</div>";
-                        html += "</a>";
+                        html += `
+                            <a class="result" href="${result[fields.url]}">
+                                <div class="image">
+                                   <img src="${result[fields.url]}/${result[fields.image]}" class="ui image small;">
+                               </div>
+                               <div class="content">
+                                    <div class="title">${result[fields.title]}</div>
+                                    <div class="title">${result[fields.description]}</div>
+                               </div>
+                           </a>
+                       `
+                    //     if (result[fields.url]) {
+                    //         html += '<a class="result" href="' + result[fields.url] + '">';
+                    //     } else {
+                    //         html += '<a class="result">';
+                    //     }
+                    //     // Don't plan on supporting images in the drop-down.
+                    //     if (result[fields.image] !== undefined) {
+                    //         html +=
+                    //             "" +
+                    //             '<div class="image">' +
+                    //             ' <img src="' + result[fields.url] + "/" + result[fields.image] + '">' +
+                    //             "</div>";
+                    //     }
+                    //     html += '<div class="content">';
+                    //     if (result[fields.title] !== undefined) {
+                    //         html += '<div class="title">' + result[fields.title] + '</div>';
+                    //         html += '<div>' + result[fields.description] + '</div>';
+                    //     }
+                    //     html += "" + "</div>";
+                    //     html += "</a>";
                     });
                     html += "</div>";
                     html += "" + "</div>";
                 }
             });
-            if (response[fields.action]) {
-                html +=
-                    "" +
-                    '<a href="' +
-                    response[fields.action][fields.actionURL] +
-                    '" class="action">' +
-                    response[fields.action][fields.actionText] +
-                    "</a>";
-            }
             return html;
         }
         return false;
@@ -242,12 +242,24 @@
             duration: 100,
             maxResults: 5,
             showNoResults: true,
-            fullTextSearch: 'exact',
-            searchFields: ['title']
+            fullTextSearch: 'true',
+            searchFields: ['title', 'description']
         })
     ;
+
+    // Setup event listener to focus search by pressing "/"
+    document.addEventListener("keyup", function onEvent(event) {
+        if (event.key === "/") {
+            $("#searchInput").focus();
+        }
+    });
+
+    console.log("newData");
     console.log(newData);
+
+    // Now remove loading spinner
     $("#loading").removeClass('active');
+
 </script>
 
 </body>
