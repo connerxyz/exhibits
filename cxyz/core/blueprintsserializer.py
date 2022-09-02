@@ -68,14 +68,18 @@ class BlueprintsSerializer:
         Returns:
             list[dict]: All the exhibit blueprints as dicts.
         """
-        for name, blueprint in self.app.blueprints.items():
-            log.info(f"Published: {name} – {blueprint.published}")
-        if serialize_unpublished:
-            return [
-                Exhibit(blueprint).__dict__ for blueprint in self.app.blueprints.values()
-            ]
-        else:
-            return [
-                Exhibit(blueprint).__dict__ for blueprint in self.app.blueprints.values()
-                if blueprint.__dict__['published']
-            ]
+        log.info("Serializing exhibits from blueprints...")
+        log.info(
+            "Including draft exhibits with build." if serialize_unpublished else "Excluding draft exhibits from build."
+        )
+        result = []
+        for blueprint in self.app.blueprints.values():
+            if not blueprint.published and serialize_unpublished:
+                log.info(f"Building draft exhibit – {blueprint.name}")
+                result.append(Exhibit(blueprint).__dict__)
+            elif not blueprint.published and not serialize_unpublished:
+                log.info(f"Skipping draft exhibit – {blueprint.name}")
+            else:
+                log.info(f"Building published exhibit – {blueprint.name}")
+                result.append(Exhibit(blueprint).__dict__)
+        return result

@@ -32,7 +32,6 @@ clean:
 # Build static site using Flask Freezer
 build:
 	poetry run python cxyz/freezer
-	echo "New site build written to docs/"
 
 # Deploy static build to GitHub Pages
 deploy: clean build

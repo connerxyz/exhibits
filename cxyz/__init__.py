@@ -78,3 +78,18 @@ from .core import utils
 @app.context_processor
 def _utils():
     return utils.registry
+
+import sys
+import logging
+
+STDOUT_LEVEL = logging.INFO
+FORMAT_STRING = '%(asctime)s %(levelname)s %(module)s %(funcName)s :: %(message)s'
+
+# Stdout/ipynb-output-cell
+sh = logging.StreamHandler(sys.stdout)
+sh.setLevel(STDOUT_LEVEL)
+sh.setFormatter(logging.Formatter(FORMAT_STRING))
+
+log = logging.getLogger()
+log.setLevel(logging.NOTSET)
+log.addHandler(sh)
