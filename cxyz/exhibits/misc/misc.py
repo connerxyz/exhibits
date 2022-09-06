@@ -7,6 +7,7 @@ misc = Blueprint('misc',
                  static_folder='./',
                  static_url_path='/')
 misc.published = True
+misc.description = "Miscellaneous creations over many years."
 
 
 @misc.route('/')

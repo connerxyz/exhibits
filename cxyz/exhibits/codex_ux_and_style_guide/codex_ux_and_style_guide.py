@@ -10,6 +10,7 @@ codex_ux_and_style_guide = Blueprint('codex_ux_and_style_guide',
 
 codex_ux_and_style_guide.display_name = "codex"
 codex_ux_and_style_guide.published = False
+codex_ux_and_style_guide.description = "A knowledge worker's operating system."
 
 
 @codex_ux_and_style_guide.route('/')

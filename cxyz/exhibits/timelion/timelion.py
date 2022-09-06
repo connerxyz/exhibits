@@ -9,6 +9,7 @@ timelion = Blueprint('timelion',
                      static_url_path='/',
                      )
 timelion.published = True
+timelion.description = "Original artwork for a metal jazz trio."
 
 
 @timelion.route('/')

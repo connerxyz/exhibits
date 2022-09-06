@@ -7,6 +7,7 @@ portraits = Blueprint('portraits',
                       static_folder='./',
                       static_url_path='/')
 portraits.published = True
+portraits.description = "A collection of self-portraits created using the same paper, pencils, charcoal."
 
 
 @portraits.route('/')

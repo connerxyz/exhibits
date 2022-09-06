@@ -18,6 +18,7 @@ class Exhibit:
         self.name = Exhibit._name(blueprint)
         self.display_name = Exhibit._display_name(blueprint)
         self.published = Exhibit._published(blueprint)
+        self.description = Exhibit._description(blueprint)
         self.thumbnail = Exhibit._thumbnail(blueprint)
         self.url = Exhibit._url(blueprint)
 
@@ -38,6 +39,13 @@ class Exhibit:
             return blueprint.published
         else:
             return False
+
+    @staticmethod
+    def _description(blueprint):
+        if hasattr(blueprint, 'description'):
+            return blueprint.description
+        else:
+            return "No description provided."
 
     @staticmethod
     def _url(blueprint):

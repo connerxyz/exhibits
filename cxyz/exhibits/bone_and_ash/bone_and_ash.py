@@ -9,6 +9,7 @@ bone_and_ash = Blueprint('bone_and_ash',
 
 bone_and_ash.display_name = "bone and ash"
 bone_and_ash.published = True
+bone_and_ash.description = "A little black moleskin."
 
 
 @bone_and_ash.route('/')

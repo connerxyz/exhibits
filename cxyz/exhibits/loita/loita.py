@@ -9,6 +9,7 @@ loita = Blueprint('loita',
 
 loita.display_name = "lost in the abyss"
 loita.published = True
+loita.description = "Original artwork for an improvisational rock band."
 
 
 @loita.route('/')

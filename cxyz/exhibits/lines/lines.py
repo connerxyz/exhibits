@@ -8,6 +8,7 @@ lines = Blueprint('lines',
 
 lines.display_name = "lines"
 lines.published = False
+lines.description = 'A "constitutional crisis" visualized using generative art.'
 
 
 @lines.route('/')

@@ -6,6 +6,7 @@ lonely = Blueprint('lonely',
                    static_folder='./',
                    static_url_path='/')
 lonely.published = True
+lonely.description = "An interactive visualization of original music."
 
 
 @lonely.route('/')

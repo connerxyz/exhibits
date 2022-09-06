@@ -8,6 +8,7 @@ minnehack = Blueprint('minnehack',
                       static_folder='./',
                       static_url_path='/')
 minnehack.published = True
+minnehack.description = "24 hour hackathon. Great prizes. Totally free."
 
 
 @minnehack.route('/')

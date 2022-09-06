@@ -6,6 +6,7 @@ congress = Blueprint('congress',
                      static_folder='./',
                      static_url_path='/')
 congress.published = True
+congress.description = "A little app built in 24 hours."
 
 
 @congress.route('/')

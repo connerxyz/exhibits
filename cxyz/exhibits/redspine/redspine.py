@@ -8,6 +8,7 @@ redspine = Blueprint('redspine',
 
 redspine.display_name = "redspine"
 redspine.published = False
+redspine.description = "A red-spine notebook. Art that folds in on itself across pages by bleeding through."
 
 
 @redspine.route('/')
