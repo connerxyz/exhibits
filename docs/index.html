@@ -29,8 +29,8 @@
     <div class="ui container">
         <a class="header item" href="/">CXYZ</a>
         <div class="right menu">
-            <a class="item" href="/about">about</a>
-            <a class="item" href="/contact">contact</a>
+<!--            <a class="item" href="/about">about</a>-->
+<!--            <a class="item" href="/contact">contact</a>-->
             <!--          <div class="item">-->
             <!--            <div class="ui icon input">-->
             <!--              <input type="text" placeholder="Search...">-->
@@ -62,7 +62,7 @@
                     <img src="/loita/thumbnail.png">
                 </a>
                 <div class="content">
-                    <a class="header exhibit-title" href="loita">lost in the abyss</a>
+                    <a class="header exhibit-title" href="loita">Lost Out in the Abyss</a>
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                     <img src="/lonely/thumbnail.png">
                 </a>
                 <div class="content">
-                    <a class="header exhibit-title" href="lonely">lonely</a>
+                    <a class="header exhibit-title" href="lonely">Lonely</a>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                     <img src="/minnehack/thumbnail.png">
                 </a>
                 <div class="content">
-                    <a class="header exhibit-title" href="minnehack">minnehack</a>
+                    <a class="header exhibit-title" href="minnehack">MinneHack</a>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
                     <img src="/congress/thumbnail.png">
                 </a>
                 <div class="content">
-                    <a class="header exhibit-title" href="congress">congress</a>
+                    <a class="header exhibit-title" href="congress">Congress</a>
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@
                     <img src="/portraits/thumbnail.png">
                 </a>
                 <div class="content">
-                    <a class="header exhibit-title" href="portraits">portraits</a>
+                    <a class="header exhibit-title" href="portraits">Self-portraits</a>
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@
                     <img src="/timelion/thumbnail.png">
                 </a>
                 <div class="content">
-                    <a class="header exhibit-title" href="timelion">timelion</a>
+                    <a class="header exhibit-title" href="timelion">Timelion</a>
                 </div>
             </div>
         </div>
@@ -128,7 +128,7 @@
                     <img src="/misc/thumbnail.png">
                 </a>
                 <div class="content">
-                    <a class="header exhibit-title" href="misc">misc</a>
+                    <a class="header exhibit-title" href="misc">Miscellaneous</a>
                 </div>
             </div>
         </div>
@@ -139,7 +139,7 @@
                     <img src="/bone-and-ash/thumbnail.png">
                 </a>
                 <div class="content">
-                    <a class="header exhibit-title" href="bone-and-ash">bone and ash</a>
+                    <a class="header exhibit-title" href="bone-and-ash">Bone &amp; Ash</a>
                 </div>
             </div>
         </div>
@@ -163,14 +163,14 @@
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script>
     // Rendering exhibits
-    let blueprints = [{"display_name": "lost in the abyss", "name": "loita", "published": true, "thumbnail": "thumbnail.png", "url": "loita"}, {"display_name": "lonely", "name": "lonely", "published": true, "thumbnail": "thumbnail.png", "url": "lonely"}, {"display_name": "minnehack", "name": "minnehack", "published": true, "thumbnail": "thumbnail.png", "url": "minnehack"}, {"display_name": "congress", "name": "congress", "published": true, "thumbnail": "thumbnail.png", "url": "congress"}, {"display_name": "portraits", "name": "portraits", "published": true, "thumbnail": "thumbnail.png", "url": "portraits"}, {"display_name": "timelion", "name": "timelion", "published": true, "thumbnail": "thumbnail.png", "url": "timelion"}, {"display_name": "misc", "name": "misc", "published": true, "thumbnail": "thumbnail.png", "url": "misc"}, {"display_name": "bone and ash", "name": "bone_and_ash", "published": true, "thumbnail": "thumbnail.png", "url": "bone-and-ash"}]
+    let blueprints = [{"description": "Original artwork for an improvisational rock band.", "display_name": "Lost Out in the Abyss", "name": "loita", "published": true, "thumbnail": "thumbnail.png", "url": "loita"}, {"description": "An interactive visualization of original music.", "display_name": "Lonely", "name": "lonely", "published": true, "thumbnail": "thumbnail.png", "url": "lonely"}, {"description": "24 hour hackathon. Great prizes. Totally free.", "display_name": "MinneHack", "name": "minnehack", "published": true, "thumbnail": "thumbnail.png", "url": "minnehack"}, {"description": "A little app built in 24 hours.", "display_name": "Congress", "name": "congress", "published": true, "thumbnail": "thumbnail.png", "url": "congress"}, {"description": "A collection of self-portraits created using the same paper, pencils, charcoal.", "display_name": "Self-portraits", "name": "portraits", "published": true, "thumbnail": "thumbnail.png", "url": "portraits"}, {"description": "Original artwork for a metal jazz trio.", "display_name": "Timelion", "name": "timelion", "published": true, "thumbnail": "thumbnail.png", "url": "timelion"}, {"description": "Miscellaneous creations over many years.", "display_name": "Miscellaneous", "name": "misc", "published": true, "thumbnail": "thumbnail.png", "url": "misc"}, {"description": "A little black moleskin.", "display_name": "Bone \u0026 Ash", "name": "bone_and_ash", "published": true, "thumbnail": "thumbnail.png", "url": "bone-and-ash"}]
     var newData = [];
     $.each(blueprints, function (i, d) {
         // Remap JSON values.
         var obj = {
             category: d.name,
             title: d.display_name,
-            description: "Kramer's mom has got it going on",
+            description: d.description,
             url: d.url,
             image: d.thumbnail
         }
