@@ -5,6 +5,7 @@ lonely = Blueprint('lonely',
                    template_folder='./',
                    static_folder='./',
                    static_url_path='/')
+lonely.display_name = 'Lonely'
 lonely.published = True
 lonely.description = "An interactive visualization of original music."
 

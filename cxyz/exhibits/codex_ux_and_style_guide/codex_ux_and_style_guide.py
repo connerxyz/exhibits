@@ -8,7 +8,7 @@ codex_ux_and_style_guide = Blueprint('codex_ux_and_style_guide',
                                      static_folder='./',
                                      static_url_path='/')
 
-codex_ux_and_style_guide.display_name = "codex"
+codex_ux_and_style_guide.display_name = "Codex"
 codex_ux_and_style_guide.published = False
 codex_ux_and_style_guide.description = "A knowledge worker's operating system."
 

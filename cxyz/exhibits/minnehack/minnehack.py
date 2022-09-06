@@ -7,6 +7,7 @@ minnehack = Blueprint('minnehack',
                       template_folder='./',
                       static_folder='./',
                       static_url_path='/')
+minnehack.display_name = "MinneHack"
 minnehack.published = True
 minnehack.description = "24 hour hackathon. Great prizes. Totally free."
 

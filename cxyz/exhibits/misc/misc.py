@@ -6,6 +6,7 @@ misc = Blueprint('misc',
                  template_folder='./',
                  static_folder='./',
                  static_url_path='/')
+misc.display_name = "Miscellaneous"
 misc.published = True
 misc.description = "Miscellaneous creations over many years."
 

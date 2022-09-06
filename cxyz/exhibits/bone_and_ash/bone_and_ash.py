@@ -7,7 +7,7 @@ bone_and_ash = Blueprint('bone_and_ash',
                          static_folder='./',
                          static_url_path='/')
 
-bone_and_ash.display_name = "bone and ash"
+bone_and_ash.display_name = "Bone & Ash"
 bone_and_ash.published = True
 bone_and_ash.description = "A little black moleskin."
 

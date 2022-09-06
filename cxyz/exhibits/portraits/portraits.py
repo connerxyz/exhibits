@@ -6,6 +6,7 @@ portraits = Blueprint('portraits',
                       template_folder='./',
                       static_folder='./',
                       static_url_path='/')
+portraits.display_name = "Self-portraits"
 portraits.published = True
 portraits.description = "A collection of self-portraits created using the same paper, pencils, charcoal."
 

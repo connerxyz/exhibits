@@ -5,8 +5,7 @@ redspine = Blueprint('redspine',
                      template_folder='./',
                      static_folder='./',
                      static_url_path='/')
-
-redspine.display_name = "redspine"
+redspine.display_name = "Redspine"
 redspine.published = False
 redspine.description = "A red-spine notebook. Art that folds in on itself across pages by bleeding through."
 

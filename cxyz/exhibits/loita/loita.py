@@ -7,7 +7,7 @@ loita = Blueprint('loita',
                   static_folder='./',
                   static_url_path='/')
 
-loita.display_name = "lost in the abyss"
+loita.display_name = "Lost Out in the Abyss"
 loita.published = True
 loita.description = "Original artwork for an improvisational rock band."
 

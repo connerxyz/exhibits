@@ -8,6 +8,7 @@ timelion = Blueprint('timelion',
                      static_folder='./',
                      static_url_path='/',
                      )
+timelion.display_name = "Timelion"
 timelion.published = True
 timelion.description = "Original artwork for a metal jazz trio."
 

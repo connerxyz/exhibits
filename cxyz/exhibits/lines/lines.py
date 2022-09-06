@@ -6,7 +6,7 @@ lines = Blueprint('lines',
                   static_folder='./',
                   static_url_path='/')
 
-lines.display_name = "lines"
+lines.display_name = "Lines"
 lines.published = False
 lines.description = 'A "constitutional crisis" visualized using generative art.'
 
