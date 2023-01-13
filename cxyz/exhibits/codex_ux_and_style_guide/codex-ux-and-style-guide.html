@@ -2,7 +2,7 @@
 
 {% block title %}CXYZ / Codex OS: Discovering a visual brand identity, creating a style guide – conner.xyz{% endblock %}
 {% block head %}
-{{ super() }}w
+{{ super() }}
 {{ zoom.css | safe }}
 {{ masonry_grid.css | safe }}
 <link href="{{ url_for('codex_ux_and_style_guide.static', filename='style.css') }}" rel="stylesheet">
@@ -11,26 +11,12 @@
 {% block container %}
 {% filter markdown %}
 
-# Codex
+# Codex OS
 
 Codex is an app for building and exploring personal knowledge graphs using digital artifacts, like text, images, and video.
 What its inventor, Iian Neil, calls a knowledge worker's operating system. Here's how we went about discovering a brand and visual identity for Codex.
 
 {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-marketing.png') | safe }}
-<!-- {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-marketing-old.png') | safe }} -->
-
-<!--{{ image_gallery('codex_ux_and_style_guide.static', images) | safe }}-->
-
-<!-- ## A potential standout among the crowd
-
-Iian and I had both been active in knowledge management for many years before we met. Iian for example developed a
-WYSIWYG text-editor that used a novel [standoff markup](https://tei-c.org/Vault/Workgroups/SO/sow06.html) format designed to [work well with graph databases](https://en.wikipedia.org/wiki/Overlapping_markup#Graph-based_formalisms). He had begun to mature this work into something he was tweeting about called Codex, which is how we first connected. 
-
-Personal knowledge management (PKM) tools like Notion, Roam, and Obsidian were becoming very popular at the time. But Iian and I felt there was still something missing from the markplace, and that perhaps Codex had something to offer among the crowd.
-
-By 2020, Iian had a working application delivering two things that stood out. First, a rich text-editor
-that made annotation using a graph-based standoff scheme easy. Second, a desktop-like interface users could develop into immersive environments, save as context "snapshots", and then quickly "snap" between across their work.
- -->
 
 ## Mood
 
@@ -61,21 +47,10 @@ A visual identity makes it easy to build a consistent brand impressions. Here is
 
 {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-marketing.png') | safe }}
 
-<!--## Roadmap
+<!--### Learn more about Codex-->
 
-Lastly, we modeled the user-experience concepts and how the application might work to support personal knowledge
-management, multi-player, and facilitate marketplace exchange of texts and annotation sets.
-
-Talk about "community governance" as a key word.
-
-{{ image_gallery('codex_ux_and_style_guide.static', images) | safe }}-->
-
-<!-- ---
-
-### Learn more about Codex
-
-As of TODO, follow Iian on twitter, support him on Patreon, join the Slack, and participate in the beta. Read his
-papers, watch his videos. -->
+<!--As of TODO, follow Iian on twitter, support him on Patreon, join the Slack, and participate in the beta. Read his-->
+<!--papers, watch his videos. &ndash;&gt;-->
 
 {% endfilter %}
 {% endblock %}
