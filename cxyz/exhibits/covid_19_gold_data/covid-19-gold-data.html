@@ -11,7 +11,43 @@
 {% block container %}
 {% filter markdown %}
 
-# covid 19 gold data
+# COVID Question Answering
+
+In 2020, I collaborated with the [Vector Institute for Artificial Intelligence](https://vectorinstitute.ai/), Thomson
+Reuters, and domain experts from leading institutions like Harvard, University of Chicago, and others to develop a
+question answering system for COVID related questions.
+
+Specifically, I led the design and implementation of a system to help coordinate our team of engineers, researchers,
+and subject-matter experts to rapidly produce high-quality training data.
+
+## Why?
+
+Lots and lots of papers. New norms around what was acceptable. Good source data: the CORD-19 corpora, thousands of
+papers related to COVID.
+
+{{ zoomable('covid_19_gold_data.static', 'img/covid-flywheel.png') | safe }}
+
+## How?
+
+It was obvious early in the collaboration we had a significant coordination problem.
+
+{{ zoomable('covid_19_gold_data.static', 'img/covid-topics-questions-answers-squad.png') | safe }}
+
+## The application
+
+{{ zoomable('covid_19_gold_data.static', 'img/covid-app-home.png') | safe }}
+
+{{ zoomable('covid_19_gold_data.static', 'img/covid-app-topics.png') | safe }}
+
+{{ zoomable('covid_19_gold_data.static', 'img/covid-app-question.png') | safe }}
+
+{{ zoomable('covid_19_gold_data.static', 'img/covid-app-grading-1.png') | safe }}
+
+{{ zoomable('covid_19_gold_data.static', 'img/covid-app-grading-2.png') | safe }}
+
+## TODO
+
+- Link to paper
 
 {{ image_gallery('covid_19_gold_data.static', images) | safe }}
 

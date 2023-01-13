@@ -7,8 +7,8 @@ covid_19_gold_data = Blueprint('covid_19_gold_data',
                                static_folder='./',
                                static_url_path='/')
 
-covid_19_gold_data.display_name = "covid data"
-covid_19_gold_data.published = False
+covid_19_gold_data.display_name = "COVID QA"
+covid_19_gold_data.published = True
 
 
 @covid_19_gold_data.route('/')

@@ -1,8 +1,8 @@
 {% extends "base-container.html" %}
 
-{% block title %}codex-ux-and-style-guide{% endblock %}
+{% block title %}CXYZ / Codex OS: Discovering a visual brand identity, creating a style guide – conner.xyz{% endblock %}
 {% block head %}
-{{ super() }}
+{{ super() }}w
 {{ zoom.css | safe }}
 {{ masonry_grid.css | safe }}
 <link href="{{ url_for('codex_ux_and_style_guide.static', filename='style.css') }}" rel="stylesheet">
@@ -34,32 +34,20 @@ that made annotation using a graph-based standoff scheme easy. Second, a desktop
 
 ## Mood
 
-A mood board helps identify visual elements and discover a general direction for the brand identity. <!-- Prompts
-like, "artifacts", "interconnection", and "memory" were used as seed phrases to source the imagery. --> Codex
+A mood board helps identify a visual direction and discover potential brand elements. Codex
 delivers [aha moments](https://productled.com/blog/how-to-identify-your-products-aha-moment/) to users by connecting
-the new and old in surprising ways for example – what's old is new again. I leaned into a mix of classical and
-contemporary to find a distinctive vibe.
+the new and old in surprising ways – what's old is new again. I leaned into this, mixing classical and contemporary to
+find a distinctive vibe.
 
 {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-mood.png') | safe }}
 
 ## Color
 
 A variety of potential color palettes were sampled from the mood board. Gold was selected as a primary brand color
-to serve a dual purpose. It built on the idea of Codex embracing anachronism as a tool (gold is both old and timeless),
-and gold, as a neutral color, left room for the many other secondary and tertiary colors Codex needed to render its
-user-interface.
-
-<!-- Black and gold for the primary brand colors allowed for a neutral yet still distinctive primary colors. Brighter
-secondary colors are included to demonstrate options for the variety of colors used for Codex's many annotations
-features. Together, we get an eclectic, global feel for what Codex represents. -->
+to serve a dual purpose. Gold is both old and timeless and, as a neutral color, it left room for the many other
+secondary and tertiary colors Codex needed to render its user-interface.
 
 {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-color.png') | safe }}
-
-<!--
-(The color palette was derived from the mood of course.)
-
-{{ zoomable('codex_ux_and_style_guide.static', 'img/codex-color-samples.png') | safe }}
--->
 
 ## Typography
 
