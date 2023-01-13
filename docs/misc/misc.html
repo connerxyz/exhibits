@@ -1,6 +1,6 @@
 {% extends "base-container.html" %}
 
-{% block title %}misc{% endblock %}
+{% block title %}CXYZ / Miscellaneous artworks and experiments – conner.xyz{% endblock %}
 {% block head %}
 {{ super() }}
 {{ zoom.css | safe }}
@@ -11,7 +11,7 @@
 {% block container %}
 {% filter markdown %}
 
-# misc
+# Miscellaneous
 
 {{ image_gallery('misc.static', images) | safe }}
 

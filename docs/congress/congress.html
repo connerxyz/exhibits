@@ -1,6 +1,6 @@
 {% extends "base-container.html" %}
 
-{% block title %}congress{% endblock %}
+{% block title %}CXYZ / Congress: an app built in 24 hours – conner.xyz{% endblock %}
 {% block head %}
 {{ super() }}
 <link href="{{ url_for('congress.static', filename='style.css') }}" rel="stylesheet">
@@ -9,7 +9,7 @@
 {% block container %}
 {% filter markdown %}
 
-# congress
+# Congress
 
 **Congress is an app I built in under 24 hours early in 2019.** It combines APIs like Propublica,
 Wikipedia, and others, to produce **analytics** and **interactive visualizations** that **help you understand

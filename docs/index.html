@@ -10,12 +10,13 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-YJW1VQX03D');
     </script>
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="description" content="CXYZ / Conner Cowling's Portfolio / Graphic design, software engineering, and other works of art – conner.xyz">
+    <meta name="keywords" content="conner, cowling, conner cowling, conner.xyz, cxyz, conner carl mingesz cowling">
     <link href="/static/favicon_io/apple-touch-icon.png" rel="apple-touch-icon"
           sizes="180x180">
     <link href="/static/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32"
@@ -27,7 +28,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet"
           type="text/css">
     <link href="/static/style.css" media="all" rel="stylesheet">
-    <title>exhibits</title>
+    <title>CXYZ / Conner Cowling's Portfolio / Graphic design, software engineering, and other works of art – conner.xyz</title>
 </head>
 
 
@@ -36,7 +37,7 @@
 
 <div class="ui borderless menu main-menu" id="main-menu">
     <div class="ui container">
-        <a class="header item" href="/">CXYZ</a>
+        <a class="header item" style="padding-left: 0; on:hov" href="/">conner.xyz | conner cowling</a>
         <div class="right menu">
 <!--            <a class="item" href="/about">about</a>-->
 <!--            <a class="item" href="/contact">contact</a>-->
@@ -164,6 +165,17 @@
             </div>
         </div>
         
+        <div class="column">
+            <div class="ui fluid link card">
+                <a class="image" href="covid-19-gold-data">
+                    <img src="/covid-19-gold-data/thumbnail.png">
+                </a>
+                <div class="content">
+                    <a class="header exhibit-title" href="covid-19-gold-data">COVID QA</a>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
 </div>
@@ -183,7 +195,7 @@
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script>
     // Rendering exhibits
-    let blueprints = [{"description": "Original artwork for an improvisational rock band.", "display_name": "Lost Out in the Abyss", "name": "loita", "published": true, "thumbnail": "thumbnail.png", "url": "loita"}, {"description": "An interactive visualization of original music.", "display_name": "Lonely", "name": "lonely", "published": true, "thumbnail": "thumbnail.png", "url": "lonely"}, {"description": "24 hour hackathon. Great prizes. Totally free.", "display_name": "MinneHack", "name": "minnehack", "published": true, "thumbnail": "thumbnail.png", "url": "minnehack"}, {"description": "A little app built in 24 hours.", "display_name": "Congress", "name": "congress", "published": true, "thumbnail": "thumbnail.png", "url": "congress"}, {"description": "A collection of self-portraits created using the same paper, pencils, charcoal.", "display_name": "Self-portraits", "name": "portraits", "published": true, "thumbnail": "thumbnail.png", "url": "portraits"}, {"description": "Original artwork for a metal jazz trio.", "display_name": "Timelion", "name": "timelion", "published": true, "thumbnail": "thumbnail.png", "url": "timelion"}, {"description": "Miscellaneous creations over many years.", "display_name": "Miscellaneous", "name": "misc", "published": true, "thumbnail": "thumbnail.png", "url": "misc"}, {"description": "A knowledge worker\u0027s operating system.", "display_name": "Codex", "name": "codex_ux_and_style_guide", "published": true, "thumbnail": "thumbnail.png", "url": "codex-ux-and-style-guide"}, {"description": "A little black moleskin.", "display_name": "Bone \u0026 Ash", "name": "bone_and_ash", "published": true, "thumbnail": "thumbnail.png", "url": "bone-and-ash"}]
+    let blueprints = [{"description": "Original artwork for an improvisational rock band.", "display_name": "Lost Out in the Abyss", "name": "loita", "published": true, "thumbnail": "thumbnail.png", "url": "loita"}, {"description": "An interactive visualization of original music.", "display_name": "Lonely", "name": "lonely", "published": true, "thumbnail": "thumbnail.png", "url": "lonely"}, {"description": "24 hour hackathon. Great prizes. Totally free.", "display_name": "MinneHack", "name": "minnehack", "published": true, "thumbnail": "thumbnail.png", "url": "minnehack"}, {"description": "A little app built in 24 hours.", "display_name": "Congress", "name": "congress", "published": true, "thumbnail": "thumbnail.png", "url": "congress"}, {"description": "A collection of self-portraits created using the same paper, pencils, charcoal.", "display_name": "Self-portraits", "name": "portraits", "published": true, "thumbnail": "thumbnail.png", "url": "portraits"}, {"description": "Original artwork for a metal jazz trio.", "display_name": "Timelion", "name": "timelion", "published": true, "thumbnail": "thumbnail.png", "url": "timelion"}, {"description": "Miscellaneous creations over many years.", "display_name": "Miscellaneous", "name": "misc", "published": true, "thumbnail": "thumbnail.png", "url": "misc"}, {"description": "A knowledge worker\u0027s operating system.", "display_name": "Codex", "name": "codex_ux_and_style_guide", "published": true, "thumbnail": "thumbnail.png", "url": "codex-ux-and-style-guide"}, {"description": "A little black moleskin.", "display_name": "Bone \u0026 Ash", "name": "bone_and_ash", "published": true, "thumbnail": "thumbnail.png", "url": "bone-and-ash"}, {"description": "No description provided.", "display_name": "COVID QA", "name": "covid_19_gold_data", "published": true, "thumbnail": "thumbnail.png", "url": "covid-19-gold-data"}]
     var newData = [];
     $.each(blueprints, function (i, d) {
         // Remap JSON values.

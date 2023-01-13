@@ -1,6 +1,6 @@
 {% extends "base-container.html" %}
 
-{% block title %}codex-ux-and-style-guide{% endblock %}
+{% block title %}CXYZ / Codex OS: Discovering a visual brand identity, creating a style guide – conner.xyz{% endblock %}
 {% block head %}
 {{ super() }}
 {{ zoom.css | safe }}
@@ -11,55 +11,29 @@
 {% block container %}
 {% filter markdown %}
 
-# Codex
+# Codex OS
 
 Codex is an app for building and exploring personal knowledge graphs using digital artifacts, like text, images, and video.
 What its inventor, Iian Neil, calls a knowledge worker's operating system. Here's how we went about discovering a brand and visual identity for Codex.
 
 {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-marketing.png') | safe }}
-<!-- {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-marketing-old.png') | safe }} -->
-
-<!--{{ image_gallery('codex_ux_and_style_guide.static', images) | safe }}-->
-
-<!-- ## A potential standout among the crowd
-
-Iian and I had both been active in knowledge management for many years before we met. Iian for example developed a
-WYSIWYG text-editor that used a novel [standoff markup](https://tei-c.org/Vault/Workgroups/SO/sow06.html) format designed to [work well with graph databases](https://en.wikipedia.org/wiki/Overlapping_markup#Graph-based_formalisms). He had begun to mature this work into something he was tweeting about called Codex, which is how we first connected. 
-
-Personal knowledge management (PKM) tools like Notion, Roam, and Obsidian were becoming very popular at the time. But Iian and I felt there was still something missing from the markplace, and that perhaps Codex had something to offer among the crowd.
-
-By 2020, Iian had a working application delivering two things that stood out. First, a rich text-editor
-that made annotation using a graph-based standoff scheme easy. Second, a desktop-like interface users could develop into immersive environments, save as context "snapshots", and then quickly "snap" between across their work.
- -->
 
 ## Mood
 
-A mood board helps identify visual elements and discover a general direction for the brand identity. <!-- Prompts
-like, "artifacts", "interconnection", and "memory" were used as seed phrases to source the imagery. --> Codex
+A mood board helps identify a visual direction and discover potential brand elements. Codex
 delivers [aha moments](https://productled.com/blog/how-to-identify-your-products-aha-moment/) to users by connecting
-the new and old in surprising ways for example – what's old is new again. I leaned into a mix of classical and
-contemporary to find a distinctive vibe.
+the new and old in surprising ways – what's old is new again. I leaned into this, mixing classical and contemporary to
+find a distinctive vibe.
 
 {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-mood.png') | safe }}
 
 ## Color
 
 A variety of potential color palettes were sampled from the mood board. Gold was selected as a primary brand color
-to serve a dual purpose. It built on the idea of Codex embracing anachronism as a tool (gold is both old and timeless),
-and gold, as a neutral color, left room for the many other secondary and tertiary colors Codex needed to render its
-user-interface.
-
-<!-- Black and gold for the primary brand colors allowed for a neutral yet still distinctive primary colors. Brighter
-secondary colors are included to demonstrate options for the variety of colors used for Codex's many annotations
-features. Together, we get an eclectic, global feel for what Codex represents. -->
+to serve a dual purpose. Gold is both old and timeless and, as a neutral color, it left room for the many other
+secondary and tertiary colors Codex needed to render its user-interface.
 
 {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-color.png') | safe }}
-
-<!--
-(The color palette was derived from the mood of course.)
-
-{{ zoomable('codex_ux_and_style_guide.static', 'img/codex-color-samples.png') | safe }}
--->
 
 ## Typography
 
@@ -73,21 +47,10 @@ A visual identity makes it easy to build a consistent brand impressions. Here is
 
 {{ zoomable('codex_ux_and_style_guide.static', 'img/codex-marketing.png') | safe }}
 
-<!--## Roadmap
+<!--### Learn more about Codex-->
 
-Lastly, we modeled the user-experience concepts and how the application might work to support personal knowledge
-management, multi-player, and facilitate marketplace exchange of texts and annotation sets.
-
-Talk about "community governance" as a key word.
-
-{{ image_gallery('codex_ux_and_style_guide.static', images) | safe }}-->
-
-<!-- ---
-
-### Learn more about Codex
-
-As of TODO, follow Iian on twitter, support him on Patreon, join the Slack, and participate in the beta. Read his
-papers, watch his videos. -->
+<!--As of TODO, follow Iian on twitter, support him on Patreon, join the Slack, and participate in the beta. Read his-->
+<!--papers, watch his videos. &ndash;&gt;-->
 
 {% endfilter %}
 {% endblock %}

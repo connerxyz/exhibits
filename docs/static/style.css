@@ -6,21 +6,7 @@ body {
     font-size: 153%;
 }
 
-
-/*body, .card {*/
-
-
-/*    font-family: 'Open Sans', sans-serif;*/
-
-
-/*}*/
-
-
 /* Exhibit headers – responsive typography */
-
-h1 {
-    font-size: 5vmax;
-}
 
 @media screen and (max-width: 680px) {
     h1 {
@@ -40,8 +26,7 @@ h6 {
     color: inherit;
 }
 
-
-/* Modifiec from https://tailwindcss.com/docs/font-size */
+/* Modified from https://tailwindcss.com/docs/font-size */
 
 h1 {
     font-size: 3rem;
